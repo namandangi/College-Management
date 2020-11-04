@@ -2,7 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const { dbConnection } = require('./config/db');
 const { port } = require('./config/constants');
-const { teacherRouter, studentRouter } = require('./routes/index');
+const { facultyRouter, studentRouter, projectRouter, departmentRouter, committeeRouter, libraryRouter } = require('./routes/index');
 const app = express();
 
 async function main() {
@@ -17,8 +17,12 @@ async function main() {
     app.use(morgan(':method :url :status :res[content-length] - :response-time ms'));
 
     //API setup
-    app.use('/api/teacher', teacherRouter);
+    app.use('/api/faculty', facultyRouter);
     app.use('/api/student', studentRouter);
+    app.use('/api/project', projectRouter);
+    app.use('/api/department', departmentRouter);
+    app.use('/api/committee', committeeRouter);
+    app.use('/api/library', libraryRouter);
 
     return app;
 }

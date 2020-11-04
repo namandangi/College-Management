@@ -1,9 +1,9 @@
 exports.getAllStudents = (req,res) => {
     const connection = req.app.get('connection');
 
-    connection.query('SELECT * FROM Student', (err, res) => {
+    connection.query('SELECT * FROM student', (err, result) => {
         if(!err) {
-            console.log(res);
+            res.status(200).json(result);
         }
     });
 }

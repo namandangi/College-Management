@@ -1,5 +1,6 @@
 const mysql = require('mysql');
 const { host, user, password, database } = require('./constants');
+
 const dbConnection = () => {
     var connection = mysql.createConnection({
         host     : host,
@@ -19,4 +20,5 @@ const dbConnection = () => {
 
     return connection;
 }
+
 module.exports = { dbConnection };
