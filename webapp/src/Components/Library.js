@@ -12,7 +12,7 @@ class Library extends Component {
           <Col className="leftside" md={2}>
             <p>
               <span className="pageimageholder">
-                <img style={{ marginTop: "30px" }} src={libraryLogo} alt="" />
+                <img style={{ marginTop: "40px" }} src={libraryLogo} alt="" />
               </span>
             </p>
             <p className="page-title">LIBRARY</p>
