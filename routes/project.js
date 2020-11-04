@@ -1,9 +1,11 @@
 const { Router } = require('express');
-const { getAllProjects, addProject } = require('../controllers/projects');
+const { getAllProjects, addProject, searchProject, countProject } = require('../controllers/projects');
 
 const router = Router();
 
 router.get('/', getAllProjects);
-router.get('/add', addProject);
+router.post('/add', addProject);
+router.get('/search', searchProject);
+router.get('/count', countProject);
 
 module.exports = router;
