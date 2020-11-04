@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Col, Row } from "react-bootstrap";
-import projectLogo from "../images/project-lg.png";
+import departmentLogo from "../images/department-lg.png";
 import switchOrder from "../images/switch-order-logo.png";
-import book from "../images/case.png";
+import vector from "../images/Vector.png";
 
 class Library extends Component {
   render() {
@@ -12,23 +12,27 @@ class Library extends Component {
           <Col className="leftside" md={2}>
             <p>
               <span className="pageimageholder">
-                <img style={{ marginTop: "40px" }} src={projectLogo} alt="" />
+                <img
+                  style={{ marginTop: "40px" }}
+                  src={departmentLogo}
+                  alt=""
+                />
               </span>
             </p>
-            <p className="page-title">PROJECTS</p>
+            <p className="page-title">DEPARTMENTS</p>
             <p>
-              No. of projects: <b>215</b> <br></br>
-              No. of professor: <b>215</b> <br></br>
+              No. of departments: <b>215</b> <br></br>
+              No. of teachers: <b>215</b> <br></br>
               No. of students: <b>215</b>
             </p>
           </Col>
           {/* <Col md={1}></Col> */}
           <Col className="rightside" md={8}>
             <Row>
-              <Col md={1}>Projects</Col>
-              <Col md={1}>Professor</Col>
+              <Col md={1}>Name</Col>
+              <Col md={1}>H.O.D</Col>
               <Col className="mr-auto" md={1}>
-                Students
+                Strength
               </Col>
 
               <input className="search" type="text" placeholder="Search" />
@@ -42,24 +46,22 @@ class Library extends Component {
             <Row className="homerow justify-content-md-center">
               <Col md={5} className="pagegrid">
                 <Row>
-                  <Col className="mr-3" md={1}>
+                  <Col md={1}>
                     <span>
-                      <img style={{ marginTop: "30px" }} src={book} alt="" />
+                      <img style={{ marginTop: "30px" }} src={vector} alt="" />
                     </span>
                   </Col>
                   <Col>
                     <br></br>
-                    <p className="text-muted float-right">[Khushali K.]</p>
-                    <p className="grid-title ">Farmer's Tech</p>
-
-                    <p>
-                      Working on technology to help farmers improve on the
-                      efficiency of their farm fields.
+                    <p className="grid-title ">Computer Engineering</p>
+                    <p className="text-muted float-right mr-4">
+                      {" "}
+                      - Khushali K.
                     </p>
                   </Col>
                 </Row>
                 <p style={{ position: "absolute", bottom: "0" }}>
-                  Naman Dangi, Nemil Shah, Nimit Vasavat
+                  Strength: 123
                 </p>
               </Col>
             </Row>

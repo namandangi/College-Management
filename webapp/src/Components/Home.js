@@ -19,8 +19,9 @@ class Home extends Component {
               <span className="imageholder">
                 <img style={{ marginTop: "30px" }} src={departLogo} alt="" />
               </span>
-
-              <p>DEPARTMENTS</p>
+              <Link to="/departments">
+                <p>DEPARTMENTS</p>
+              </Link>
             </Col>
             <Col md={5} className="homegrid">
               <span className="imageholder">
@@ -45,8 +46,9 @@ class Home extends Component {
               <span className="imageholder">
                 <img style={{ marginTop: "30px" }} src={commiteeLogo} alt="" />
               </span>
-
-              <p>COMMITEES</p>
+              <Link to="/committees">
+                <p>COMMITTEES</p>
+              </Link>
             </Col>
           </Row>
         </div>
