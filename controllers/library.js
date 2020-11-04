@@ -2,7 +2,7 @@
 
 exports.getAllBooks = (req, res) => {    
     const connection = req.app.get('connection');
-    var { tag, order } = req.query;    
+    var { tag, order } = req.query;
     order = order === '-1' ? 'DESC': 'ASC';
 
     connection.query('SELECT * FROM library ORDER BY ' + tag + ' ' + order, (err, result) => {
@@ -38,7 +38,7 @@ exports.searchBooks = (req, res) => {
 exports.libraryCount = (req, res) => {
     const connection = req.app.get('connection');
     connection.query(
-        'SELECT COUNT UNIQUE bname AS noOfBooks, COUNT UNIQUE author AS noOfAuthors, COUNT edition AS noOfEditions FROM library',
+        'SELECT COUNT(DISTINCT bname) AS noOfBooks, COUNT(DISTINCT author) AS noOfAuthors, COUNT(edition) AS noOfEditions FROM library',
         (err, result) => {
             if(!err) {
                 res.status(200).json(result);
