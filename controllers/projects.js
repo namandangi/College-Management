@@ -32,10 +32,10 @@ exports.searchProject = (req, res) => {
     })
 }
 
-exports.projectCount = (req, res) => {
+exports.countProject = (req, res) => {
     const connection = req.app.get('connection');
     connection.query(
-        'SELECT COUNT(DISTINCT bname) AS noOfBooks, COUNT(DISTINCT author) AS noOfAuthors, COUNT(edition) AS noOfEditions FROM library',
+        'SELECT COUNT(DISTINCT rp.pname) AS noOfProjects, COUNT(DISTINCT rs.sapid) AS noOfStudents, COUNT(DISTINCT rf.fid) AS noOfFaculties  FROM (research_proj rp INNER JOIN research_student rs ON rs.pid = rp.pid) INNER JOIN research_faculty rf',
         (err, result) => {
             if(!err) {
                 res.status(200).json(result);
