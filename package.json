@@ -23,6 +23,7 @@
     "google-maps-react": "^2.0.6",
     "mongoose": "^5.10.11",
     "morgan": "^1.10.0",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5"
   }
 }
