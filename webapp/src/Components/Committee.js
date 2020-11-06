@@ -45,7 +45,7 @@ function Committee() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (searchVal !== '') {
-      const doc = await fetch(`/api/committee/search?tag=cname&filter=${searchVal}`)
+      const doc = await fetch(`/api/committee/search?tag=${tag}&filter=${searchVal}`)
       const result = await doc.json();
       setCommittees(result);
     }

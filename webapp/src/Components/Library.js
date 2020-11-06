@@ -44,7 +44,7 @@ function Library() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (searchVal !== '') {
-      const doc = await fetch(`/api/library/search?tag=bname&filter=${searchVal}`)
+      const doc = await fetch(`/api/library/search?tag=${tag}&filter=${searchVal}`)
       const result = await doc.json();
       setBooks(result);
     }

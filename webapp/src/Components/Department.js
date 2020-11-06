@@ -43,7 +43,7 @@ function Department() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (searchVal !== '') {
-      const doc = await fetch(`/api/department/search?tag=dname&filter=${searchVal}`)
+      const doc = await fetch(`/api/department/search?tag=${tag}&filter=${searchVal}`)
       const result = await doc.json();
       setDepartments(result);
     }
