@@ -26,7 +26,7 @@ exports.searchBooks = async(req, res) => {
 exports.libraryCount = async(req, res) => {
     const connection = req.app.get('connection');
     const [rows, fields] = await connection.query(
-        'SELECT COUNT(DISTINCT bname) AS noOfBooks, COUNT(DISTINCT author) AS noOfAuthors, COUNT(edition) AS noOfEditions FROM library',
+        'SELECT COUNT(DISTINCT bname) AS noOfBooks, COUNT(DISTINCT author) AS noOfAuthors, COUNT(DISTINCT edition) AS noOfEditions FROM library',
         );
     res.status(200).json(rows[0]);
 }
