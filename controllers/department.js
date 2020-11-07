@@ -53,6 +53,8 @@ exports.getADepartmentData = async(req, res) => {
 
 exports.getADepartmentCourse = async(req, res) => {
     const connection = req.app.get('connection');
+    var { tag, order } = req.query;
+    order = order === '-1' ? 'DESC': 'ASC';
     var { dname } = req.params;
     dname = dname
             .replace(/-/g, ' ')
@@ -60,8 +62,23 @@ exports.getADepartmentCourse = async(req, res) => {
             .map(word => word.charAt(0).toUpperCase() + word.slice(1))
             .join(' ');
     const [rowCourse, fieldCourse] = await connection.query(
-        'select c.course_name, c.credits, f.fname from (course c inner join teaches t on c.courseid = t.courseid) inner join (faculty f  inner join department d on f.did = d.did) where f.fid = t.fid and d.dname = ?', [dname]);
+        'select c.course_name as course_name, c.credits as credits, f.fname as fname from (course c inner join teaches t on c.courseid = t.courseid) inner join (faculty f  inner join department d on f.did = d.did) where f.fid = t.fid and d.dname = ? ORDER BY ' + tag + ' ' + order, [dname]);
     res.status(200).json(rowCourse);
+}
+
+exports.searchACourse = async(req, res) => {
+    const connection = req.app.get('connection');
+    var { filter } = req.query;
+    var { dname } = req.params;
+    dname = dname
+            .replace(/-/g, ' ')
+            .split(' ')
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(' ');
+    filter = '%' + filter + '%';
+    const [rows, fields] = await connection.query(
+        'select c.course_name as course_name, c.credits as credits, f.fname as fname from (course c inner join teaches t on c.courseid = t.courseid) inner join (faculty f  inner join department d on f.did = d.did) where f.fid = t.fid and d.dname = ? and c.course_name LIKE ?', [dname, filter])
+    res.status(200).json(rows);
 }
 
 exports.addDepartment = async(req, res) => {
