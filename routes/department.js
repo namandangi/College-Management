@@ -1,9 +1,12 @@
 const { Router } = require('express');
-const { getAllDepartment, addDepartment, searchDepartment, countDepartment } = require('../controllers/department');
+const { getAllDepartment, addDepartment, searchDepartment, countDepartment, getADepartment, getADepartmentData, getADepartmentCourse } = require('../controllers/department');
 
 const router = Router();
 
 router.get('/', getAllDepartment);
+router.get('/get/:dname', getADepartment);
+router.get('/get/:dname/data', getADepartmentData);
+router.get('/get/:dname/course', getADepartmentCourse);
 router.post('/add', addDepartment);
 router.get('/search', searchDepartment);
 router.get('/count', countDepartment);
