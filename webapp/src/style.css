@@ -63,6 +63,7 @@ label {
 .imageholder {
   display: inline-block;
   background-color: #e1e4e8;
+  border: 1px solid black;
   height: 120px;
   width: 120px;
   border-radius: 50%;

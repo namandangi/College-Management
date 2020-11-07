@@ -24,6 +24,7 @@ function App() {
   const renderSingleDepartment = () => <SingleDepartment />;
   const renderAddBook = () => <AddBook />;
   const renderUpdateBook = () => <AddBook />;
+  const renderAbout = () => <About />;
 
   return (
     <div className="App">
@@ -41,7 +42,12 @@ function App() {
           component={renderSingleDepartment}
         />
         <Route exact path="/library/add" component={renderAddBook} />
-        <Route exact path="/library/update/:bookid" component={renderUpdateBook} />
+        <Route
+          exact
+          path="/library/update/:bookid"
+          component={renderUpdateBook}
+        />
+        <Route exact path="/about-us" component={renderAbout} />
 
         <Footer />
       </Router>
