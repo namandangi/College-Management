@@ -82,7 +82,7 @@ function Library() {
     getCount();
     getBooks();
   }, [tag, order, noOfBooks, noOfAuthors, noOfEditions, books.length]);
-  console.log(searchVal);
+  console.log(books);
   return (
     <div>
       <Row>
@@ -99,8 +99,8 @@ function Library() {
             No. of Editions: <b>{noOfEditions}</b>
           </p>
           <br></br>
-          <Link to="/add-a-book">
-            <button className="add-btn">
+          <Link to="/library/add">
+            <button className="add-btn" style={{border: "1px solid"}}>
               <i class="fa fa-plus mr-3" aria-hidden="true"></i>Add Book
             </button>
           </Link>
@@ -162,7 +162,9 @@ function Library() {
                     <Col>
                       <br></br>
                       <p className="float-right">
-                        <i class="fa fa-pencil mr-3" aria-hidden="true" />
+                        <Link to={`/library/update/${el.bookid}`}>
+                          <i class="fa fa-pencil mr-3" aria-hidden="true" />
+                        </Link>
                         <i class="fa fa-trash" aria-hidden="true" onClick={() => handleDelete(el)} />
                       </p>
                       <p className="grid-title ">{el.bname}</p>

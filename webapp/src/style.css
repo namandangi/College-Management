@@ -115,7 +115,7 @@ label {
   margin-right: 10px;
 }
 
-#add-book-div {
+.center-div {
   width: 750px;
   border-radius: 15px;
   background-color: white;

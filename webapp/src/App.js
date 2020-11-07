@@ -10,6 +10,7 @@ import Committee from "./Components/Committee";
 import Contact from "./Components/Contact";
 import SingleDepartment from "./Components/SingleDepartment";
 import AddBook from "./Components/AddBook";
+import About from "./Components/About";
 
 import { Route, BrowserRouter as Router } from "react-router-dom";
 
@@ -22,6 +23,7 @@ function App() {
   const renderContact = () => <Contact />;
   const renderSingleDepartment = () => <SingleDepartment />;
   const renderAddBook = () => <AddBook />;
+  const renderUpdateBook = () => <AddBook />;
 
   return (
     <div className="App">
@@ -38,7 +40,8 @@ function App() {
           path="/department/:dname"
           component={renderSingleDepartment}
         />
-        <Route exact path="/add-a-book" component={renderAddBook} />
+        <Route exact path="/library/add" component={renderAddBook} />
+        <Route exact path="/library/update/:bookid" component={renderUpdateBook} />
 
         <Footer />
       </Router>
