@@ -9,6 +9,7 @@ import Department from "./Components/Department";
 import Committee from "./Components/Committee";
 import Contact from "./Components/Contact";
 import SingleDepartment from "./Components/SingleDepartment";
+import AddBook from "./Components/AddBook";
 
 import { Route, BrowserRouter as Router } from "react-router-dom";
 
@@ -20,6 +21,7 @@ function App() {
   const renderCommittee = () => <Committee />;
   const renderContact = () => <Contact />;
   const renderSingleDepartment = () => <SingleDepartment />;
+  const renderAddBook = () => <AddBook />;
 
   return (
     <div className="App">
@@ -36,6 +38,7 @@ function App() {
           path="/department/:dname"
           component={renderSingleDepartment}
         />
+        <Route exact path="/add-a-book" component={renderAddBook} />
 
         <Footer />
       </Router>

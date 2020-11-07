@@ -14,6 +14,21 @@
   color: white;
 }
 
+.add-btn {
+  background-color: inherit;
+  border-color: black;
+  padding: 3px 25px;
+  border-radius: 25px;
+}
+
+.create-btn {
+  background-color: black;
+  color: white;
+  border-radius: 25px;
+  width: 120px;
+  padding: 6px 0;
+}
+
 a {
   text-decoration: none;
   color: inherit !important;
@@ -22,6 +37,10 @@ a {
 a:hover {
   text-decoration: none !important;
   color: inherit !important;
+}
+
+label {
+  font-weight: 600;
 }
 
 .homegrid {
@@ -94,6 +113,14 @@ a:hover {
   padding: 5px 15px;
   height: 32px;
   margin-right: 10px;
+}
+
+#add-book-div {
+  width: 750px;
+  border-radius: 15px;
+  background-color: white;
+  padding: 20px;
+  margin: auto;
 }
 
 .footer {

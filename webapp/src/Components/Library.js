@@ -3,6 +3,7 @@ import { Col, Row } from "react-bootstrap";
 import libraryLogo from "../images/library-lg.png";
 import switchOrder from "../images/switch-order-logo.png";
 import book from "../images/book.png";
+import { Link } from "react-router-dom";
 
 function Library() {
   const [tag, setTag] = useState("bname");
@@ -83,6 +84,12 @@ function Library() {
             No. of Authors: <b>{noOfAuthors}</b> <br></br>
             No. of Editions: <b>{noOfEditions}</b>
           </p>
+          <br></br>
+          <Link to="/add-a-book">
+            <button className="add-btn">
+              <i class="fa fa-plus mr-3" aria-hidden="true"></i>Add Book
+            </button>
+          </Link>
         </Col>
         {/* <Col md={1}></Col> */}
         <Col className="rightside" md={8}>
