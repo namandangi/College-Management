@@ -83,8 +83,16 @@ label {
   text-align: center;
 }
 
+button {
+  cursor: pointer !important;
+}
+
 .rightside {
   margin-top: 30px;
+}
+
+.rightside .row .col-md-1 {
+  cursor: pointer;
 }
 
 .pagegrid {

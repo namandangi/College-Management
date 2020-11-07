@@ -74,9 +74,12 @@ function Department() {
         <Row>
           <Col className="leftside" md={2}>
             <p>
-              <span className="pageimageholder" style={{ marginTop: "40px", border: "1px solid" }}>
+              <span
+                className="pageimageholder"
+                style={{ marginTop: "40px", border: "1px solid" }}
+              >
                 <img
-                  style={{ marginTop: "40px"}}
+                  style={{ marginTop: "40px" }}
                   src={departmentLogo}
                   alt=""
                 />
@@ -125,7 +128,7 @@ function Department() {
                 value={searchVal}
                 onChange={handleChange}
                 onKeyDown={handleKeyDown}
-                style={{border: "1px solid black"}}
+                style={{ border: "1px solid black" }}
               />
               <buttton onClick={handleOrder}>
                 <img src={switchOrder} alt=""></img>{" "}
@@ -136,7 +139,12 @@ function Department() {
             <Row className="homerow justify-content-md-center">
               {departments.length > 0 &&
                 departments.map((el, id) => (
-                  <Col md={5} key={id} className="pagegrid" style={{border: "1px solid black"}}>
+                  <Col
+                    md={5}
+                    key={id}
+                    className="pagegrid"
+                    style={{ border: "1px solid black" }}
+                  >
                     <Row>
                       <Col md={1}>
                         <span>
