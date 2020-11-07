@@ -77,7 +77,7 @@ function Committee() {
         <Row>
           <Col className="leftside" md={2}>
             <p>
-              <span className="pageimageholder">
+              <span className="pageimageholder" style={{ border: "1px solid" }}>
                 <img style={{ marginTop: "40px" }} src={committeeLogo} alt="" />
               </span>
             </p>
@@ -103,7 +103,7 @@ function Committee() {
                 Accolades
               </Col>
 
-              <input className="search" type="text" placeholder="Search" value={searchVal} onChange={handleChange} onKeyDown={handleKeyDown} />
+              <input className="search" type="text" placeholder="Search" style={{ border: "1px solid" }} value={searchVal} onChange={handleChange} onKeyDown={handleKeyDown} />
               <buttton onClick={handleOrder}>
                 <img src={switchOrder} alt=""></img>{" "}
               </buttton>
@@ -112,7 +112,7 @@ function Committee() {
             {/* MAIN */}
               <Row className="homerow justify-content-md-center">
                 { committees.length > 0 && committees.map((el, id) => (
-                  <Col md={5} key={id} className="pagegrid">
+                  <Col md={5} key={id} className="pagegrid" style={{ border: "1px solid" }}>
                     <Row>
                       <Col md={1}>
                         <span>

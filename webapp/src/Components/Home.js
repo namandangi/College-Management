@@ -15,15 +15,15 @@ class Home extends Component {
         <br></br>
         <div>
           <Row className="homerow justify-content-md-center">
-            <Col md={5} className="homegrid">
-              <Link to="/departments">
+          <Col md={5} className="homegrid" style={{border: "1px solid black"}}>
+            <Link to="/departments">
                 <span className="imageholder">
                   <img style={{ marginTop: "30px" }} src={departLogo} alt="" />
                 </span>
-                <p>DEPARTMENTS</p>
-              </Link>
-            </Col>
-            <Col md={5} className="homegrid">
+                <p>DEPARTMENTS</p>              
+            </Link>
+          </Col>          
+            <Col md={5} className="homegrid" style={{border: "1px solid black"}}>
               <Link to="/library">
                 <span className="imageholder">
                   <img style={{ marginTop: "30px" }} src={libraryLogo} alt="" />
@@ -34,7 +34,7 @@ class Home extends Component {
             </Col>
           </Row>
           <Row className="homerow justify-content-md-center">
-            <Col md={5} className="homegrid">
+            <Col md={5} className="homegrid" style={{border: "1px solid black"}}>
               <Link to="/projects">
                 <span className="imageholder">
                   <img style={{ marginTop: "30px" }} src={projectLogo} alt="" />
@@ -42,7 +42,7 @@ class Home extends Component {
                 <p>PROJECTS</p>
               </Link>
             </Col>
-            <Col md={5} className="homegrid">
+            <Col md={5} className="homegrid" style={{border: "1px solid black"}}>
               <Link to="/committees">
                 <span className="imageholder">
                   <img

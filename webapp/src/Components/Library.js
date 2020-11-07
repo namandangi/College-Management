@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
+import _ from "lodash";
 import libraryLogo from "../images/library-lg.png";
 import switchOrder from "../images/switch-order-logo.png";
 import book from "../images/book.png";
@@ -63,17 +64,30 @@ function Library() {
     else setOrder("1");
   };
 
+  const handleDelete = async(el) => {
+    try {
+      await fetch(`api/library/delete?bname=${el.bname}&edition=${el.edition}`,
+      {
+          method: "POST"
+      });
+      const updatedBooks = _.remove(books, function(n) { return n.bname === el.bname});
+      setBooks(updatedBooks);
+    } catch (err) {
+
+    }
+  }
+
   useEffect(() => {
     getCount();
     getBooks();
-  }, [tag, order, noOfBooks, noOfAuthors, noOfEditions]);
+  }, [tag, order, noOfBooks, noOfAuthors, noOfEditions, books.length]);
   console.log(searchVal);
   return (
     <div>
       <Row>
         <Col className="leftside" md={2}>
           <p>
-            <span className="pageimageholder">
+            <span className="pageimageholder" style={{ marginTop: "40px", border: "1px solid" }}>
               <img style={{ marginTop: "40px" }} src={libraryLogo} alt="" />
             </span>
           </p>
@@ -120,6 +134,7 @@ function Library() {
               value={searchVal}
               onChange={handleChange}
               onKeyDown={handleKeyDown}
+              style={{ border: "1px solid" }}
             />
             <buttton onClick={handleOrder}>
               <img src={switchOrder} alt=""></img>{" "}
@@ -130,7 +145,7 @@ function Library() {
           <Row className="homerow justify-content-md-center">
             {books.length > 0 &&
               books.map((el, id) => (
-                <Col md={5} key={id} className="pagegrid">
+                <Col md={5} key={id} className="pagegrid" style={{ border: "1px solid" }}>
                   <Row>
                     <Col md={1}>
                       <span>
@@ -140,8 +155,8 @@ function Library() {
                     <Col>
                       <br></br>
                       <p className="float-right">
-                        <i class="fa fa-pencil mr-3" aria-hidden="true"></i>
-                        <i class="fa fa-trash" aria-hidden="true"></i>
+                        <i class="fa fa-pencil mr-3" aria-hidden="true" />
+                        <i class="fa fa-trash" aria-hidden="true" onClick={() => handleDelete(el)} />
                       </p>
                       <p className="grid-title ">{el.bname}</p>
                       <span style={{ float: "right" }}> - {el.author}</span>
