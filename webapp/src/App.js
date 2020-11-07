@@ -8,6 +8,7 @@ import Project from "./Components/Project";
 import Department from "./Components/Department";
 import Committee from "./Components/Committee";
 import Contact from "./Components/Contact";
+import SingleDepartment from "./Components/SingleDepartment";
 
 import { Route, BrowserRouter as Router } from "react-router-dom";
 
@@ -18,6 +19,7 @@ function App() {
   const renderDepartment = () => <Department />;
   const renderCommittee = () => <Committee />;
   const renderContact = () => <Contact />;
+  const renderSingleDepartment = () => <SingleDepartment />;
 
   return (
     <div className="App">
@@ -29,6 +31,11 @@ function App() {
         <Route exact path="/departments" component={renderDepartment} />
         <Route exact path="/committees" component={renderCommittee} />
         <Route exact path="/contact" component={renderContact} />
+        <Route
+          exact
+          path="/department/:dname"
+          component={renderSingleDepartment}
+        />
 
         <Footer />
       </Router>
