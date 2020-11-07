@@ -12,6 +12,7 @@ function Department() {
   const [noOfStudents, setStudentNo] = useState(0);
   const [departments, setDepartments] = useState([]);
   const [searchVal, setSearchVal] = useState('');
+  
   async function getCount() {
     try {
       const doc = await fetch('/api/department/count');
@@ -69,7 +70,6 @@ function Department() {
     getCount();
     getDepartments();
   }, [ tag, order, noOfDepartments, noOfFaculties, noOfStudents]);
-  console.log(departments);
     return (
       <>
       <div>
