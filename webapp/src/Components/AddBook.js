@@ -6,7 +6,7 @@ function AddBook() {
       <br></br>
       <h2>LIBRARY REPOSITORY</h2>
       <br></br>
-      <div id="add-book-div">
+      <div class="center-div">
         <h3>ADD A BOOK</h3>
         <br></br>
         <div className="row align-items-end">
