@@ -11,7 +11,25 @@ exports.addBook = async(req, res) => {
     // const post = { bookid: 5, bname: 'Rich Dad Poor Dad', edition: 5, author: 'Robert Kiyosaki' };
     const { bookid, bname, edition, author } = req.body;
     const post = { bookid, bname, edition, author };
+    console.log(post);
     const [rows, fields] = await connection.query('INSERT INTO library SET ?', [post]);
+    res.status(200).json(rows);
+}
+
+exports.deleteBook = async(req, res) => {
+    const connection = req.app.get('connection');
+    const { bname, edition } = req.query;
+    const [rows, fields] = await connection.query('delete from library where bname = ? and edition = ' + (edition),[bname]);
+    res.status(200).json(rows);
+}
+
+exports.updateBook = async(req, res) => {
+    const connection = req.app.get('connection');
+    const { oldbname, oldedition } = req.query;
+    const { bname, author, edition } = req.body;
+    const [rows, fields] = await connection.query(
+        'update library set bname = ?, author = ?, edition = ' + edition + ' where bname = ? and edition = ' + oldedition,
+        [bname, author, oldbname]);
     res.status(200).json(rows);
 }
 

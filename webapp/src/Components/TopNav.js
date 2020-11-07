@@ -10,7 +10,7 @@ import djs from "../images/djs.png";
 class TopNav extends Component {
   render() {
     return (
-      <Navbar bg="dark" variant="dark">
+      <Navbar bg="dark" variant="dark" style={{maxHeight: "60px"}}>
         <Link to="/">
           <Navbar.Brand href="#home" className="navtitle">
             <img src={djs} alt="" />

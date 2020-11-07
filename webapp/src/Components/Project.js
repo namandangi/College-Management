@@ -77,7 +77,7 @@ function Project() {
         <Row>
           <Col className="leftside" md={2}>
             <p>
-              <span className="pageimageholder">
+              <span className="pageimageholder" style={{ border: "1px solid" }}>
                 <img style={{ marginTop: "40px" }} src={projectLogo} alt="" />
               </span>
             </p>
@@ -101,7 +101,7 @@ function Project() {
                 Description
               </Col>
 
-              <input className="search" type="text" placeholder="Search" value={searchVal} onChange={handleChange} onKeyDown={handleKeyDown} />
+              <input className="search" type="text" placeholder="Search" style={{ border: "1px solid" }} value={searchVal} onChange={handleChange} onKeyDown={handleKeyDown} />
               <buttton onClick={handleOrder}>
                 <img src={switchOrder} alt=""></img>{" "}
               </buttton>
@@ -110,7 +110,7 @@ function Project() {
             {/* MAIN */}
             <Row className="homerow justify-content-md-center">
             { projects.length > 0 && projects.map((el, id) => (
-              <Col key={id} md={5} className="pagegrid">
+              <Col key={id} md={5} className="pagegrid" style={{ border: "1px solid" }}> 
                 <Row>
                   <Col className="mr-3" md={1}>
                     <span>
