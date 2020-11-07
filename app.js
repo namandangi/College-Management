@@ -1,7 +1,9 @@
 const express = require('express');
 const morgan = require('morgan');
+const cors = require('cors');
 const { dbConnection } = require('./config/db');
 const { port } = require('./config/constants');
+const { options } = require('./config/middleware');
 const { facultyRouter, studentRouter, projectRouter, departmentRouter, committeeRouter, libraryRouter } = require('./routes/index');
 const app = express();
 
@@ -15,6 +17,7 @@ async function main() {
     app.use(express.json());
     app.use(express.static(`${__dirname}/public`));
     app.use(morgan(':method :url :status :res[content-length] - :response-time ms'));
+    app.use(cors(options));
 
     //API setup
     app.use('/api/faculty', facultyRouter);
