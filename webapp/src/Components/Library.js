@@ -80,9 +80,10 @@ function Library() {
 
   useEffect(() => {
     getCount();
-    getBooks();
+    if(searchVal === '')
+      getBooks();
   }, [tag, order, noOfBooks, noOfAuthors, noOfEditions, books.length]);
-  console.log(books);
+  console.log(searchVal);
   return (
     <div>
       <Row>
