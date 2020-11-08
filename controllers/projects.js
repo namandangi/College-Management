@@ -2,7 +2,8 @@ exports.getAllProjects = async(req, res) => {
     const connection = req.app.get('connection');
     var { tag, order } = req.query;
     order = order === '-1' ? 'DESC': 'ASC';
-    const [rows, fields] = await connection.query('SELECT * FROM research_proj ORDER BY ' + tag + ' ' + order);
+    const [rows, fields] = await connection.query(
+        'select rp.pname, rp.p_desc, f.fname from (research_proj rp inner join research_faculty rf on rp.pid = rf.pid) inner join faculty f on rf.fid = f.fid ORDER BY ' + tag + ' ' + order);
     res.status(200).json(rows);
 }
 
@@ -18,7 +19,8 @@ exports.searchProject = async(req, res) => {
     const connection = req.app.get('connection');
     var { tag, filter } = req.query;
     filter = '%' + filter + '%';
-    const [rows, fields] = await connection.query(' SELECT * FROM research_proj WHERE ' + tag + ' LIKE ?', [filter]);
+    const [rows, fields] = await connection.query(
+        'select rp.pname as pname, rp.p_desc as p_desc, f.fname as fname from (research_proj rp inner join research_faculty rf on rp.pid = rf.pid) inner join faculty f on rf.fid = f.fid WHERE ' + tag + ' LIKE ?', [filter]);    
     res.status(200).json(rows);
 }
 
