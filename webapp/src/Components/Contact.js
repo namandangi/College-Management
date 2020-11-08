@@ -1,24 +1,98 @@
 import React, { Component } from "react";
-import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
+import { Col, Row } from "react-bootstrap";
+import home from "../images/home.png";
+import phone from "../images/phone.png";
+import fax from "../images/fax.png";
+import email from "../images/emil.png";
+import website from "../images/website.png";
 
 class Contact extends Component {
   render() {
     return (
       <div>
-        <Map google={this.props.google} zoom={14}>
-          <Marker onClick={this.onMarkerClick} name={"Current location"} />
+        <Row>
+          <Col md={1}></Col>
+          <Col>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
 
-          {/* <InfoWindow onClose={this.onInfoWindowClose}>
-            <div>
-              <h1>{this.state.selectedPlace.name}</h1>
+            <Row>
+              <Col md={3}>
+                {" "}
+                <img className="mr-2" src={home} alt="" />
+                <b className="mt-2"> Address: </b>{" "}
+              </Col>
+              <Col>
+                No.U-15, J.V.P.D. Scheme, Bhaktivedanta Swami Marg, Opp.Cooper
+                Hospital Vile Parle (West), Mumbai-400 056. India
+              </Col>
+            </Row>
+            <br></br>
+            <Row>
+              <Col md={3}>
+                {" "}
+                <img className="mr-2" src={phone} alt="" />
+                <b className="mt-2"> Phone: </b>{" "}
+              </Col>
+              <Col>42335000/42335001</Col>
+            </Row>
+            <br></br>
+            <Row>
+              <Col md={3}>
+                {" "}
+                <img className="mr-2" src={fax} alt="" />
+                <b className="mt-2"> Fax: </b>{" "}
+              </Col>
+              <Col>26194988</Col>
+            </Row>
+            <br></br>
+            <Row>
+              <Col md={3}>
+                {" "}
+                <img className="mr-2" src={email} alt="" />
+                <b className="mt-2"> Email: </b>{" "}
+              </Col>
+              <Col>info@djsce.ac.in / admin@djsce.ac.in</Col>
+            </Row>
+            <br></br>
+            <Row>
+              <Col md={3}>
+                {" "}
+                <img className="mr-2" src={website} alt="" />
+                <b className="mt-2"> Website: </b>{" "}
+              </Col>
+              <Col>www.djsce.ac.in</Col>
+            </Row>
+          </Col>
+          <Col md={5}>
+            <div className="mt-5">
+              <h2>CONTACT US</h2>
+              <br></br>
+              <br></br>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15080.05015075494!2d72.8371074!3d19.1071059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x75f29a4205098f99!2sDwarkadas%20Jivanlal%20Sanghvi%20College%20of%20Engineering!5e0!3m2!1sen!2sin!4v1604506625307!5m2!1sen!2sin"
+                width="602"
+                height="459"
+                frameborder="0"
+                style={{ border: "0" }}
+                allowfullscreen=""
+                aria-hidden="false"
+                tabindex="0"
+              ></iframe>
             </div>
-          </InfoWindow> */}
-        </Map>
+          </Col>
+          <Col md={1}></Col>
+        </Row>
       </div>
     );
   }
 }
 
-export default GoogleApiWrapper({
-  apiKey: "AIzaSyCG4DZJUYWqujS4SZm_wV74l9lUm3gMwQc",
-})(Contact);
+export default Contact;

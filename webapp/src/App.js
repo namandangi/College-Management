@@ -8,6 +8,9 @@ import Project from "./Components/Project";
 import Department from "./Components/Department";
 import Committee from "./Components/Committee";
 import Contact from "./Components/Contact";
+import SingleDepartment from "./Components/SingleDepartment";
+import AddBook from "./Components/AddBook";
+import About from "./Components/About";
 
 import { Route, BrowserRouter as Router } from "react-router-dom";
 
@@ -18,6 +21,10 @@ function App() {
   const renderDepartment = () => <Department />;
   const renderCommittee = () => <Committee />;
   const renderContact = () => <Contact />;
+  const renderSingleDepartment = () => <SingleDepartment />;
+  const renderAddBook = () => <AddBook />;
+  const renderUpdateBook = () => <AddBook />;
+  const renderAbout = () => <About />;
 
   return (
     <div className="App">
@@ -29,6 +36,18 @@ function App() {
         <Route exact path="/departments" component={renderDepartment} />
         <Route exact path="/committees" component={renderCommittee} />
         <Route exact path="/contact" component={renderContact} />
+        <Route
+          exact
+          path="/department/:dname"
+          component={renderSingleDepartment}
+        />
+        <Route exact path="/library/add" component={renderAddBook} />
+        <Route
+          exact
+          path="/library/update/:bookid"
+          component={renderUpdateBook}
+        />
+        <Route exact path="/about-us" component={renderAbout} />
 
         <Footer />
       </Router>

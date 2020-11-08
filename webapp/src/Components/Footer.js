@@ -6,7 +6,7 @@ class Footer extends Component {
     return (
       <div className="footer ">
         <div className="float-right">
-          About | <Link to="/contact">Contact</Link>
+          <Link to="/about-us">About </Link>| <Link to="/contact">Contact</Link>
         </div>
         <div className="mr-auto">© Dwarkadas J. Sanghvi</div>
       </div>
