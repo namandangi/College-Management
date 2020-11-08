@@ -1,16 +1,15 @@
-exports.getAllCommittee = async(req, res) => { //details of committee left, query ready
+exports.getAllCommittee = async(req, res) => { 
     const connection = req.app.get('connection');
     let { tag, order } = req.query;
     order = order === '-1' ? 'DESC': 'ASC';
-    // const [rows, fields] = await connection.query('SELECT * FROM committee ORDER BY ' + tag + ' ' + order);
-    await connection.query('create temporary table if not exists tmpComm(cname varchar(50), fname varchar(50), accolades int(11) )');
-    const [rowsDetails, fields] = await connection.query('select c.c_name as cname, s.full_name as fname from committee c inner join student s on c.c_head = s.sapid');
+    await connection.query('create temporary table if not exists tmpComm(isTech int(1), cname varchar(50), fname varchar(50), accolades int(11) )');
+    const [rowsDetails, fields] = await connection.query('select c.c_name as cname, c.tech_c as isTech, s.full_name as fname from committee c inner join student s on c.c_head = s.sapid');
     const [rowsAccolades, fieldsAccolades] = await connection.query('select (c.compi_wins+c.events_organised) as accolades from committee c ');
     rowsDetails.map((el,id) => {
         el.accolades = (rowsAccolades[id].accolades);
     });
     console.log((rowsDetails));
-    await connection.query('insert into tmpComm (cname, fname, accolades) values ?', [rowsDetails.map(item => [item.cname, item.fname, item.accolades])]);
+    await connection.query('insert into tmpComm (isTech, cname, fname, accolades) values ?', [rowsDetails.map(item => [item.isTech, item.cname, item.fname, item.accolades])]);
     const [tmpRows, tmpFields] = await connection.query('SELECT distinct * FROM tmpComm ORDER BY ' + tag + ' ' + order);
     res.status(200).json(tmpRows);
 }

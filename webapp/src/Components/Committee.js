@@ -7,6 +7,7 @@ import bulb from "../images/bulb.png";
 function Committee() {
   const [tag, setTag] = useState("cname");
   const [order, setOrder] = useState("1");
+  const [type, setType] = useState(1);
   const [noOfCommittees, setCommitteeNo] = useState(0);
   const [noOfVictories, setVictoryNo] = useState(0);
   const [noOfEvents, setEventNo] = useState(0);
@@ -155,7 +156,8 @@ function Committee() {
                     <Col>
                       <br></br>
                       <p className="grid-title ">{el.cname}</p>
-                      <p className="text-muted">Type: Technical</p>
+                      {el.isTech ===1 && <p className="text-muted">Type: Technical</p> }
+                      {el.isTech !==1 && <p className="text-muted">Type: Non-Technical</p> }
                       <p className="text-muted float-right mr-4">
                         {" "}
                         - {el.fname}
@@ -163,7 +165,7 @@ function Committee() {
                     </Col>
                   </Row>
                   <p style={{ position: "absolute", bottom: "0" }}>
-                    Accolade: {el.accolades}
+                    Accolades: {el.accolades}
                   </p>
                 </Col>
               ))}
