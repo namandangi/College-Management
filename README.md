@@ -22,33 +22,33 @@
 <p align="center">
   <h2> Features </h2>
 <h3>Home Page</h3>
-<img src ="https://github.com/namandangi/DBMS/blob/master/public/docs/home.png" alt="home" width="1000" height="400">
+<img src="https://github.com/namandangi/DBMS/blob/main/public/docs/home.png" alt="home">
 <h3>Department Page</h3>
-<img src="https://github.com/namandangi/DBMS/blob/master/public/docs/department.png" alt="department"  width="1000" height="400">
+<img src="https://github.com/namandangi/DBMS/blob/main/public/docs/department.png" alt="department">
 <h3>Committee Page</h3>
-<img src="https://github.com/namandangi/DBMS/blob/master/public/docs/committee.png" alt="committee" width="1000" height="400">
+<img src="https://github.com/namandangi/DBMS/blob/main/public/docs/committee.png" alt="committee">
 <h3>Project Page</h3>
-<img src="https://github.com/namandangi/DBMS/blob/master/public/docs/project.png" alt="project" width="1000" height="400">
+<img src="https://github.com/namandangi/DBMS/blob/main/public/docs/project.png" alt="project">
 <h3>Library Page</h3>
-<img src="https://github.com/namandangi/DBMS/blob/master/public/docs/authorTag.png" alt="authorTag" width="1000" height="400">
+<img src="https://github.com/namandangi/DBMS/blob/main/public/docs/authorTag.png" alt="authorTag">
 <h3>Add a Book</h3>
-<img src="https://github.com/namandangi/DBMS/blob/master/public/docs/add.png" alt="add" width="1000" height="400">
+<img src="https://github.com/namandangi/DBMS/blob/main/public/docs/add.png" alt="add">
 <h3>Update a Book</h3>
-<img src="https://github.com/namandangi/DBMS/blob/master/public/docs/update.png" alt="update" width="1000" height="400">
+<img src="https://github.com/namandangi/DBMS/blob/main/public/docs/update.png" alt="update">
 <h3>List Items based on Tag Names</h3>
 <h5>List Books by the Author Name</h5>
-<img src="https://github.com/namandangi/DBMS/blob/master/public/docs/authorTag.png" alt="authorTag" width="1000" height="400">
+<img src="https://github.com/namandangi/DBMS/blob/main/public/docs/authorTag.png" alt="authorTag">
 <h5>List Books by the Title of the Books</h5>
-<img src="https://github.com/namandangi/DBMS/blob/master/public/docs/nameTag.png" alt="nameTag" width="1000" height="400">
+<img src="https://github.com/namandangi/DBMS/blob/main/public/docs/nameTag.png" alt="nameTag">
 <h5>List Books by the Editon of the Books</h5>
-<img src="https://github.com/namandangi/DBMS/blob/master/public/docs/edition.png" alt="editionTag" width="1000" height="400">
+<img src="https://github.com/namandangi/DBMS/blob/main/public/docs/edition.png" alt="editionTag">
 <h3> Search an item by Tag</h3>
-<img src="https://github.com/namandangi/DBMS/blob/master/public/docs/search.png" alt="search" width="1000" height="400">
+<img src="https://github.com/namandangi/DBMS/blob/main/public/docs/search.png" alt="search">
 <h3> Change the order of the current Tag</h3>
-<img src="https://github.com/namandangi/DBMS/blob/master/public/docs/edition.png" alt="normalOrder" width="1000" height="400">
-<img src="https://github.com/namandangi/DBMS/blob/master/public/docs/editionOrder.png" alt="orderSwitch" width="1000" height="400">
+<img src="https://github.com/namandangi/DBMS/blob/main/public/docs/edition.png" alt="normalOrder">
+<img src="https://github.com/namandangi/DBMS/blob/main/public/docs/editionOrder.png" alt="orderSwitch">
 <h3> Contact Page </h3>
-<img src="https://github.com/namandangi/DBMS/blob/master/public/docs/contact.png" alt="contact" width="1000" height="400">  
+<img src="https://github.com/namandangi/DBMS/blob/master/public/docs/contact.png" alt="contact">
 </p>
 
 ## Technology Stack :
