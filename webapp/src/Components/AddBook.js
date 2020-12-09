@@ -26,7 +26,7 @@ function AddBook(props) {
       var editionNo = parseFloat(edition);
       var feedback_div = document.getElementById("feedback");
       feedback_div.innerHTML = "";
-      if (bname == "" || author == "" || editionNo == "") {
+      if (bname === "" || author === "" || editionNo === "") {
         var error =
           "<p class='alert alert-danger'>Please enter the missing values</p>";
       } else {
